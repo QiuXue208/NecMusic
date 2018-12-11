@@ -9,12 +9,13 @@ import Footer from '../components/IndexComponent/Footer'
 import HotSong from '../components/IndexComponent/HotSong'
 import Search from '../components/IndexComponent/Search'
 
-function IndexPage() {
+function IndexPage(props) {
   return (
     <div>
        <div className={styles.topBar}>
           <Header />
-          <Nav />
+          <Nav currentIndex={props.value.currentIndex}
+          />
        </div>
        <ul className={styles.showList}>
             <li data-key="0">
@@ -33,7 +34,12 @@ function IndexPage() {
   );
 }
 
+function mapStateToProps(state){
+  return {
+    value:state.index
+  }
+}
 IndexPage.propTypes = {
 };
 
-export default connect()(IndexPage);
+export default connect(mapStateToProps)(IndexPage);
