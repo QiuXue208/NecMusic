@@ -25,15 +25,15 @@ function IndexPage(props) {
           />
        </div>
        <ul className={styles.showList}>
-            <li data-key="0">
+            <li data-key="0" className={props.value.currentIndex === 0 ? `${styles.show}`:`${styles.nonShow}`}>
                 <RecommendationList />
                 <LatestSong />
                 <Footer />
             </li>
-            <li data-key="1">
+            <li data-key="1" className={props.value.currentIndex === 1 ? `${styles.show}`:`${styles.nonShow}`}>
                 <HotSong />
             </li>
-            <li data-key="2">
+            <li data-key="2" className={props.value.currentIndex === 2 ? `${styles.show}`:`${styles.nonShow}`}>
                 <Search />
             </li>
         </ul>
