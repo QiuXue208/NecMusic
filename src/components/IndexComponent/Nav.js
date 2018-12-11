@@ -9,8 +9,8 @@ function Nav({currentIndex,onChangeCurrentIndex}){
     const listItems = paragraphs.map((paragraph,index)=>{
         return (<li 
                     key={index} 
-                     className={currentIndex === index ? `${styles.active}`:`${styles.nonActive}`}
-                     onClick={()=>changeCurrentIndex(index)}
+                    className={currentIndex === index ? `${styles.active}`:`${styles.nonActive}`}
+                    onClick={()=>changeCurrentIndex(index)}
                      >
                     {paragraph}
                 </li>)
