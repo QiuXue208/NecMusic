@@ -5,10 +5,5 @@ export default {
 
   state: {
     currentIndex:0
-  },
-
-  reducers: {
-    
-  },
-
+  }
 };
