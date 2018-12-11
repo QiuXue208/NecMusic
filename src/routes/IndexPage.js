@@ -10,11 +10,18 @@ import HotSong from '../components/IndexComponent/HotSong'
 import Search from '../components/IndexComponent/Search'
 
 function IndexPage(props) {
+  function onChangeCurrentIndex(index){
+    props.dispatch({
+      type:'index/change',
+      payload:index
+    })
+  }
   return (
     <div>
        <div className={styles.topBar}>
           <Header />
           <Nav currentIndex={props.value.currentIndex}
+               onChangeCurrentIndex={onChangeCurrentIndex}
           />
        </div>
        <ul className={styles.showList}>
