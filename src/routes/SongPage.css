@@ -1,0 +1,14 @@
+*{
+    margin:0;
+    padding:0;
+}
+.logo{
+    width:92px;
+    height:17px;
+    position:absolute;
+    top:12px;
+    left:10px;
+}
+.logoContainer{
+    position:relative;
+}
