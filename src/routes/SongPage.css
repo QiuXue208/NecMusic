@@ -2,12 +2,16 @@
     margin:0;
     padding:0;
 }
+@keyframes circle{
+    0%{transform:rotate(0)}
+    100%{transform:rotate(360deg)}
+}
 .container{
     height:100%;
 
 }
 .background{
-    background:url(https://music.163.com/api/img/blur/109951163709583836);
+    background:url('../assets/background.png');
     background-size:auto 100%;
     background-position:50%;
     background-repeat: no-repeat;
@@ -55,10 +59,9 @@
     height:137px;
     left:172px;
     top:0;
-    background-image: url(//s3.music.126.net/m/s/img/needle-ip6.png?be4ebbe…);
+    background-image: url('../assets/needle-ip6.png');
     background-size:contain;
 }
-
 .songRoll{
     position:relative;
     width:296px;
@@ -71,8 +74,9 @@
     left:0;
     bottom:0;
     right:0;
-    background-image: url(//s3.music.126.net/m/s/img/disc-ip6.png?6979612…);
+    background-image:url('../assets/disc-ip6.png');
     background-size:contain;
+    animation:circle 20s linear infinite;
 }
 .songRoll::before{
     position:absolute;
@@ -97,6 +101,7 @@
 }
 .imgContainer > img{
     width:100%;
+    animation:circle 20s linear infinite;
 }
 .iconContainer{
     position: absolute;
