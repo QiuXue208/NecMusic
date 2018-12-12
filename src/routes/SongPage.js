@@ -1,4 +1,6 @@
 import styles from './SongPage.css'
+import React from 'react'
+import {connect} from 'dva'
 import Logo from '../components/SongComponent/Logo'
 import Disk from '../components/SongComponent/Disk'
 import Lyric from '../components/SongComponent/Lyric'
