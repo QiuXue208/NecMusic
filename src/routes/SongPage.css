@@ -67,7 +67,7 @@
     width:296px;
     height:296px;
 }
-.songRoll::after{
+.songRoll > .after{
     position:absolute;
     content:'';
     top:0;
@@ -79,7 +79,7 @@
     animation:circle 20s linear infinite;
     animation-play-state: paused;
 }
-.songRoll::before{
+.songRoll > .before{
     position:absolute;
     z-index:1;
     content:'';
