@@ -77,6 +77,7 @@
     background-image:url('../assets/disc-ip6.png');
     background-size:contain;
     animation:circle 20s linear infinite;
+    animation-play-state: paused;
 }
 .songRoll::before{
     position:absolute;
@@ -102,6 +103,7 @@
 .imgContainer > img{
     width:100%;
     animation:circle 20s linear infinite;
+    animation-play-state: paused;
 }
 .iconContainer{
     position: absolute;
@@ -117,13 +119,13 @@
 .iconContainer > .twoIcon{
     margin-top:8px;
 }
-.iconContainer .playBtn,
-.iconContainer .pauseBtn{
+.iconContainer .playBtn{
+/* .iconContainer .pauseBtn{ */
     font-size:56px;
     color:white;
 }
 .iconContainer .playBtn::after,
-.iconContainer .pauseBtn::after{
+/* .iconContainer .pauseBtn::after{ */{
     position:absolute;
     content:'';
     top:0;
@@ -135,6 +137,6 @@
     opacity: .3;
     z-index:-1;
 } 
-.iconContainer .pauseBtn{
+/* .iconContainer .pauseBtn{
     display:none;
-}
+} */

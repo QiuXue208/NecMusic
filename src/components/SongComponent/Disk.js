@@ -13,7 +13,7 @@ function Disk(){
                 <div className={styles.iconContainer}>
                     <div className={styles.twoIcon}>
                         <IconFont className={styles.playBtn} type="icon-play" />
-                        <IconFont className={styles.pauseBtn} type="icon-timeout" />
+                        {/* <IconFont className={styles.pauseBtn} type="icon-timeout" /> */}
                     </div>
                 </div>         
             </div>
