@@ -2,6 +2,32 @@
     margin:0;
     padding:0;
 }
+.container{
+    height:100%;
+
+}
+.background{
+    background:url(https://music.163.com/api/img/blur/109951163709583836);
+    background-size:auto 100%;
+    background-position:50%;
+    background-repeat: no-repeat;
+    height:100%;
+    position:relative;
+    z-index:-1;
+}
+.background::after{
+    content:'';
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:black;
+    opacity: .3;
+    z-index:-1;
+}
+/* logo */
 .logo{
     width:92px;
     height:17px;
@@ -11,4 +37,99 @@
 }
 .logoContainer{
     position:relative;
+}
+
+/* disk */
+.diskContainer{
+    position:relative;
+    padding-top:70px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.diskContainer::after{
+    position:absolute;
+    content:'';
+    width:96px;
+    height:137px;
+    left:172px;
+    top:0;
+    background-image: url(//s3.music.126.net/m/s/img/needle-ip6.png?be4ebbe…);
+    background-size:contain;
+}
+
+.songRoll{
+    position:relative;
+    width:296px;
+    height:296px;
+}
+.songRoll::after{
+    position:absolute;
+    content:'';
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-image: url(//s3.music.126.net/m/s/img/disc-ip6.png?6979612…);
+    background-size:contain;
+}
+.songRoll::before{
+    position:absolute;
+    z-index:1;
+    content:'';
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-image: url('../assets/disc_light-ip6.png');
+    background-size: contain;
+}
+.imgContainer{
+    width:184px;
+    height:184px;
+    border-radius:50%;
+    overflow:hidden;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.imgContainer > img{
+    width:100%;
+}
+.iconContainer{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:56px;
+    height:56px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.iconContainer > .twoIcon{
+    margin-top:8px;
+}
+.iconContainer .playBtn,
+.iconContainer .pauseBtn{
+    font-size:56px;
+    color:white;
+}
+.iconContainer .playBtn::after,
+.iconContainer .pauseBtn::after{
+    position:absolute;
+    content:'';
+    top:0;
+    left:0;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background-color:black;
+    opacity: .3;
+    z-index:-1;
+} 
+.iconContainer .pauseBtn{
+    display:none;
 }
