@@ -6,10 +6,12 @@ import Footer from '../components/SongComponent/Footer'
 function SongPage(){
     return (
         <div className={styles.container}>
+          <div className={styles.background}>
             <Logo />
             <Disk />
             <Lyric />
             <Footer />
+          </div>
         </div>
     )
 }
