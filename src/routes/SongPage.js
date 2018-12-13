@@ -6,21 +6,15 @@ import Disk from '../components/SongComponent/Disk'
 import Lyric from '../components/SongComponent/Lyric'
 import Footer from '../components/SongComponent/Footer'
 function SongPage(props){
-    const onChangeStyle = ()=>{
-        console.log('1111')
-        props.dispatch({
-            type:'song/change'
-        })
-        console.log('222')
-    }
     return (
-        <div className={styles.container}>
-          <div className={styles.background}>
-            <Logo />
-            <Disk onChangeStyle={onChangeStyle} value={props.value}/>
-            <Lyric />
-            <Footer />
-          </div>
+        <div onClick={()=>console.log('container')} className={styles.container}>
+            <div className={styles.background}> </div>
+                <Logo />
+                
+                <Disk value={props.value}/>
+                <Lyric />
+                <Footer />
+                  
         </div>
     )
 }
