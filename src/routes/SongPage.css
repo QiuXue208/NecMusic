@@ -17,7 +17,6 @@
     background-repeat: no-repeat;
     height:100%;
     position:relative;
-    z-index:-1;
 }
 .background::after{
     content:'';
@@ -29,7 +28,6 @@
     bottom:0;
     background-color:black;
     opacity: .3;
-    z-index:-1;
 }
 /* logo */
 .logo{
@@ -67,6 +65,7 @@
     width:296px;
     height:296px;
     border:1px solid red;
+    /* z-index:3; */
 }
 .songRoll > .after{
     position:absolute;
@@ -82,7 +81,7 @@
 }
 .songRoll > .before{
     position:absolute;
-    z-index:1;
+    /* z-index:1; */
     content:'';
     top:0;
     bottom:0;
@@ -136,7 +135,7 @@
     border-radius:50%;
     background-color:black;
     opacity: .3;
-    z-index:-1;
+    /* z-index:-1; */
 } 
 /* .iconContainer .pauseBtn{
     display:none;
