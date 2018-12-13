@@ -8,7 +8,6 @@
 }
 .container{
     height:100%;
-
 }
 .background{
     background:url('../assets/background.png');
@@ -27,7 +26,7 @@
     right:0;
     bottom:0;
     background-color:black;
-    opacity: .3;
+    opacity: .5;
 }
 /* logo */
 .logo{
@@ -36,107 +35,66 @@
     position:absolute;
     top:12px;
     left:10px;
-}
-.logoContainer{
-    position:relative;
+    z-index:1;
 }
 
 /* disk */
 .diskContainer{
-    position:relative;
-    padding-top:70px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.diskContainer::after{
     position:absolute;
+    top:70px;;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1;
+}
+.songRoll{
+    position: relative;
+}
+.songRoll::after{
     content:'';
     width:96px;
     height:137px;
-    left:172px;
-    top:0;
+    top:-70px;
+    left:133px;
+    position: absolute;
     background-image: url('../assets/needle-ip6.png');
     background-size:contain;
 }
-.songRoll{
-    position:relative;
+.songRoll > .disc{
     width:296px;
     height:296px;
-    border:1px solid red;
-    /* z-index:3; */
-}
-.songRoll > .after{
-    position:absolute;
-    content:'';
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
     background-image:url('../assets/disc-ip6.png');
     background-size:contain;
     animation:circle 20s linear infinite;
     animation-play-state: paused;
 }
-.songRoll > .before{
-    position:absolute;
-    /* z-index:1; */
-    content:'';
-    top:0;
-    bottom:0;
-    right:0;
-    left:0;
+.songRoll > .disc > .discOver{
+    width:296px;
+    height:296px;
     background-image: url('../assets/disc_light-ip6.png');
     background-size: contain;
 }
-.imgContainer{
-    width:184px;
-    height:184px;
-    border-radius:50%;
-    overflow:hidden;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
 .imgContainer > img{
-    width:100%;
-    animation:circle 20s linear infinite;
-    animation-play-state: paused;
-}
-.iconContainer{
+    width:184px;
+    border-radius:50%;
     position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:56px;
-    height:56px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    top:55px;
+    left:55px;
 }
-.iconContainer > .twoIcon{
-    margin-top:8px;
-}
-.iconContainer .playBtn{
-/* .iconContainer .pauseBtn{ */
+.playBtn{
     font-size:56px;
     color:white;
-}
-.iconContainer .playBtn::after,
-/* .iconContainer .pauseBtn::after{ */{
     position:absolute;
-    content:'';
-    top:0;
-    left:0;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.iconBack{
+    position: absolute;
+    top:115px;
+    left:120px;
     width:56px;
     height:56px;
     border-radius:50%;
-    background-color:black;
-    opacity: .3;
-    /* z-index:-1; */
-} 
-/* .iconContainer .pauseBtn{
-    display:none;
-} */
+    background:black;
+    opacity:.3;
+}
