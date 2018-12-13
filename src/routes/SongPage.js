@@ -5,13 +5,17 @@ import Logo from '../components/SongComponent/Logo'
 import Disk from '../components/SongComponent/Disk'
 import Lyric from '../components/SongComponent/Lyric'
 import Footer from '../components/SongComponent/Footer'
-function SongPage(props){
+function SongPage({value,dispatch}){
+    const onChangeStyle = ()=>{
+        dispatch({
+            type:'song/change'
+        })
+    }
     return (
-        <div onClick={()=>console.log('container')} className={styles.container}>
+        <div className={styles.container}>
             <div className={styles.background}> </div>
-                <Logo />
-                
-                <Disk value={props.value}/>
+                <Logo />               
+                <Disk value={value} onChangeStyle={onChangeStyle}/>
                 <Lyric />
                 <Footer />
                   
@@ -19,7 +23,6 @@ function SongPage(props){
     )
 }
 function mapStateToProps(state){
-    console.log('我在mapStateToProps ')
     return {
         value:state.song
     }

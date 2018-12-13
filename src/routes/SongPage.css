@@ -64,14 +64,13 @@
     height:296px;
     background-image:url('../assets/disc-ip6.png');
     background-size:contain;
-    animation:circle 20s linear infinite;
-    animation-play-state: paused;
 }
 .songRoll > .disc > .discOver{
     width:296px;
     height:296px;
     background-image: url('../assets/disc_light-ip6.png');
     background-size: contain;
+    animation:circle 20s linear infinite;
 }
 .imgContainer > img{
     width:184px;
@@ -79,22 +78,28 @@
     position: absolute;
     top:55px;
     left:55px;
+    animation:circle 20s linear infinite;
+}
+.iconContainer{
+    width:57px;
+    height:57px;
+    position: absolute;
+    top:120px;
+    left:120px;
+    overflow: hidden;
 }
 .playBtn{
     font-size:56px;
     color:white;
     position:absolute;
     left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
+    top:56%;
+    transform:translate(-50%,-50%); 
 }
 .iconBack{
-    position: absolute;
-    top:115px;
-    left:120px;
-    width:56px;
-    height:56px;
+    width:100%;
+    height:100%;
     border-radius:50%;
     background:black;
-    opacity:.3;
+    opacity:.3; 
 }
