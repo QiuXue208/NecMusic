@@ -46,10 +46,7 @@
     transform:translateX(-50%);
     z-index:1;
 }
-.songRoll{
-    position: relative;
-}
-.songRoll::after{
+.diskContainer::after{
     content:'';
     width:96px;
     height:137px;
@@ -58,6 +55,9 @@
     position: absolute;
     background-image: url('../assets/needle-ip6.png');
     background-size:contain;
+}
+.songRoll{
+    position: relative;
 }
 .songRoll > .disc{
     width:296px;
@@ -102,4 +102,70 @@
     border-radius:50%;
     background:black;
     opacity:.3; 
+}
+
+/* Lyric */
+.songInfo{
+    width:100%;
+    padding:0 35px;
+    position: absolute;
+    top:390px;
+    text-align: center;
+}
+.songInfo > h2{
+    color:#fefefe;
+    font-size:18px;
+    line-height:1.1;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.songInfo > .songLyricsContainer{
+    text-align: center;
+    margin-top:15px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+}
+.songInfo  .songRoll{
+    height:56px;
+    width:100%;
+    font-size:16px;
+    line-height:1.2;
+}
+.songInfo  p.singer{
+    color:#fefefe;
+}
+.songInfo  p.lyric{
+    color:#A9A2A0;
+}
+.songInfo .songLink{
+    display: block;
+    height:30px;
+    line-height:30px;
+    color:#A9A2A0;
+    margin-top:80px;
+}
+.songInfo .songGuide{
+    /* text-align: center; */
+    height:12px;
+    width:17px;  
+    outline:1px solid green;
+    overflow: hidden;
+} 
+.songInfo img{
+    width:100%;
+    animation:scroll 1.2s linear infinite;
+}
+/* .songInfo .guideBack{
+    width:100%;
+    height:100%;
+    animation:scroll 1.2s linear infinite;
+    background: url('../assets/guide.png') no-repeat;
+    background-size: 17px auto;
+} */
+@keyframes scroll{
+    0%{
+        transform: translateY(0)
+    }
+    100%{
+        transform:translateY(-100%)
+    }
 }
