@@ -141,18 +141,17 @@
     height:30px;
     line-height:30px;
     color:#A9A2A0;
-    margin-top:80px;
+    margin-top:78px;
 }
 .songInfo .songGuide{
-    /* text-align: center; */
-    height:12px;
-    width:17px;  
-    outline:1px solid green;
+    height:11px;
     overflow: hidden;
+    margin-top:6px;
 } 
 .songInfo img{
-    width:100%;
-    animation:scroll 1.2s linear infinite;
+    width:17px;
+    margin-top:-12px;
+    animation:scroll 1.2s steps(1) infinite;
 }
 /* .songInfo .guideBack{
     width:100%;
@@ -162,10 +161,12 @@
     background-size: 17px auto;
 } */
 @keyframes scroll{
-    0%{
-        transform: translateY(0)
-    }
-    100%{
-        transform:translateY(-100%)
-    }
+    0%{margin-top:0}
+    15%{margin-top:-12px}
+    30%{margin-top:-24px}
+    45%{margin-top:-36px}
+    60%{margin-top:-48px}
+    75%{margin-top:-60px}
+    90%{margin-top:-72px}
+    100%{margin-top:-84px}
 }
