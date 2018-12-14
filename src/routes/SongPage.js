@@ -10,6 +10,9 @@ function SongPage({value,dispatch}){
         dispatch({
             type:'song/change'
         })
+        dispatch({
+            type:'song/playOrPause'
+        })
     }
     return (
         <div className={styles.container}>
