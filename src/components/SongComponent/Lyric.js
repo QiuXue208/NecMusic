@@ -1,5 +1,23 @@
 import styles from '../../routes/SongPage.css'
 import guideImg from'../../assets/guide.png'
+
+var p = document.createElement('p')
+p.className = 'lyric'
+p.innerText = '作曲：王艳薇'
+console.log(p)
+
+var xhr = new XMLHttpRequest()
+console.log(xhr)
+xhr.open('GET','../../json/song.json')
+xhr.onreadystatechange = ()=>{
+    if(xhr.readyState === 4 && xhr.status === 200){
+        console.log('success')
+        console.log(xhr.responseText)
+    }
+}
+xhr.send()
+
+
 function Lyric(){
     return (
         <div className={styles.songInfo}>

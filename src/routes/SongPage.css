@@ -129,6 +129,7 @@
     width:100%;
     font-size:16px;
     line-height:1.2;
+    outline:1px solid red;
 }
 .songInfo  p.lyric.active{
     color:#fefefe;
