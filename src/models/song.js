@@ -6,6 +6,9 @@ var judgement = false
 var audio = document.createElement('audio')
 audio.src = "http://pjpeuy1al.bkt.clouddn.com/%E7%88%B1%E7%9A%84%E9%87%8D%E9%87%8F.mp3"
 audio.autoplay = true
+audio.onended = ()=>{
+    
+}
 export default{
     namespace:'song',
     state:{
@@ -31,17 +34,12 @@ export default{
             }
         },
         playOrPause(state){
-            if(audio.ended){
-               console.log('播放结束了')
+            if(audio.paused){
+                audio.play()
+            }else{
+                audio.pause()
             }
-            else{
-                if(audio.paused){
-                    audio.play()
-                }else{
-                    audio.pause()
-                }
-                return state
-            }
-        },
+            return state
+        }
     }
 }
