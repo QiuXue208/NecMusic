@@ -17,8 +17,7 @@ function SongPage({value,dispatch}){
                 <Logo />               
                 <Disk value={value} onChangeStyle={onChangeStyle}/>
                 <Lyric />
-                <Footer />
-                  
+                <Footer />                
         </div>
     )
 }
