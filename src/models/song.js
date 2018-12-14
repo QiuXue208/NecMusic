@@ -31,12 +31,17 @@ export default{
             }
         },
         playOrPause(state){
-            if(audio.paused){
-                audio.play()
-            }else{
-                audio.pause()
+            if(audio.ended){
+               console.log('播放结束了')
             }
-            return state
-        }
+            else{
+                if(audio.paused){
+                    audio.play()
+                }else{
+                    audio.pause()
+                }
+                return state
+            }
+        },
     }
 }
