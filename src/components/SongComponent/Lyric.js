@@ -1,29 +1,52 @@
 import styles from '../../routes/SongPage.css'
 import guideImg from'../../assets/guide.png'
 import jsonData from '../../json/song.json'
- console.log(jsonData)
+
 function Lyric(){
+    var audio = document.querySelector('audio')
     let array = jsonData.lyric.split('\n')
-    console.log(jsonData.lyric)
-    console.log(array)
+    var pLists = array.map((item,key)=>{
+        let matches = item.match(/^\[(.*)\](.*)/)
+        let times = matches[1].match(/^(.*):(.*)/)
+        let minutes = times[1]
+        let seconds = times[2]
+        let secondsTime =seconds.match(/^(.*)\.(.*)/)
+        let newSeconds = parseInt(secondsTime[1]) + '.'  + secondsTime[2]
+        let lyricTime = minutes*60 + parseFloat(newSeconds,10)
+        // console.log(lyricTime)
+        return <p key={key} id={key} className={styles.lyric + '' + styles.active} data-time={lyricTime}>{matches[2]}</p>
+    })
+    // setInterval(()=>{
+    //     console.log(audio.currentTime)
+    // },500)
+    for(let i=0;i<pLists.length;i++){
+        let timerId = setInterval(()=>{
+            let currentTime = audio.currentTime
+            // console.log(currentTime)
+            if(i<pLists.length - 1){
+                let prevTime = pLists[i].props['data-time']
+                let nextTime = pLists[i+1].props['data-time']
+                if(currentTime >= prevTime && currentTime <= nextTime ){
+                    let currentPTag = document.getElementById(`${i}`)
+                    currentPTag.style = 'color:#fefefe;'
+                    let delta = nextTime-prevTime
+                    setTimeout(()=>{
+                        currentPTag.previousSibling.style = 'color:#A9A2A0;'
+                        currentPTag.parentNode.style = `transform:translateY(${-35*i}px)`
+                    },delta)
+                }
+            }else{
+                //处理最后一句歌词
+            }
+        },500)
+
+    }
     return (
         <div className={styles.songInfo}>
             <h2>{jsonData.songName}</h2>
             <div className={styles.songLyricsContainer}>
                 <div className={styles.songRoll}>
-                 { 
-                     array.map((item,key)=>{
-                        let matches = item.match(/^\[(.*)\](.*)/)
-                        // console.log(matches)
-                   //  let times = matches[1].match(/^(.*):(.*)/)
-                    // console.log(times)
-                   //  let seconds = times[1]*60 + times[2]
-                   //  console.log(seconds       )
-                        return <p key={key} className={styles.lyric} data-time={matches[1]}>{matches[2]}</p>
-                    })
-                }
-                    {/* <p className={styles.lyric}>作词:王艳薇</p>
-                    <p className={styles.lyric}>失去的瞬间</p> */}
+                 {pLists}
                 </div>
             </div>
             <a className={styles.songLink} href="#">查看完整歌词></a>
