@@ -8,6 +8,7 @@
 }
 .container{
     height:100%;
+    overflow:hidden;
 }
 .background{
     background:url('../assets/background.png');
@@ -122,20 +123,23 @@
     overflow:hidden;
     text-overflow: ellipsis;
 }
-.songInfo > .songLyricsContainer{
-    text-align: center;
-    margin-top:15px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-}
-.songInfo  .songRoll{
+.songInfo > .songLyricsContainer{  
     height:56px;
     width:100%;
+    margin-top:15px; 
+    overflow:hidden;
+}
+.songInfo  .songRoll{
     font-size:16px;
-    line-height:1.2;
-    outline:1px solid red;
+    line-height:1.2; 
+    transition:transform 0.3s;
 }
 
 .songInfo  p.lyric{
     color:#A9A2A0;
+}
+.songInfo  p.lyric.active{
+    color:#fefefe;
 }
 .songInfo .songLink{
     display: block;
