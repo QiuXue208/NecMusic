@@ -1,3 +1,9 @@
+
+var audio = document.createElement('audio')
+audio.src = "http://pjpeuy1al.bkt.clouddn.com/%E7%88%B1%E7%9A%84%E9%87%8D%E9%87%8F.mp3"
+audio.autoplay = true
+document.body.appendChild(audio)
+
 let styleOne = {
     playBtnStyle:{display:'block'},
     imgStyle:{animationPlayState:'paused'},
@@ -9,13 +15,8 @@ let styleTwo = {
     rollStyle:{animationPlayState:'running'}
 }
 var judgement = false
-var audio = document.createElement('audio')
-audio.src = "http://pjpeuy1al.bkt.clouddn.com/%E7%88%B1%E7%9A%84%E9%87%8D%E9%87%8F.mp3"
-audio.autoplay = true
 
-let timerId = setInterval(()=>{
-    // console.log(audio.currentTime)
-},500)
+
 export default{
     namespace:'song',
     state:styleTwo,
