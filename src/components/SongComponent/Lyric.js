@@ -1,34 +1,11 @@
 import styles from '../../routes/SongPage.css'
 import guideImg from'../../assets/guide.png'
 import jsonData from '../../json/song.json'
-// console.log(jsonData)
-
-
-
-
-// var xhr = new XMLHttpRequest()
-// console.log(xhr)
-// xhr.open('GET','../../json/song.json')
-// xhr.onreadystatechange = ()=>{
-//     if(xhr.readyState === 4 && xhr.status === 200){
-//         console.log('success')
-//         console.log(xhr.responseText)
-//     }
-// }
-// xhr.send()
-
-
-// $(function(){
-//     $.getJSON('../../json/song.json',function(response){
-//         console.log(response)
-//     })
-// })
-
-
-
-
+ console.log(jsonData)
 function Lyric(){
     let array = jsonData.lyric.split('\n')
+    console.log(jsonData.lyric)
+    console.log(array)
     return (
         <div className={styles.songInfo}>
             <h2>{jsonData.songName}</h2>
@@ -38,10 +15,10 @@ function Lyric(){
                      array.map((item,key)=>{
                         let matches = item.match(/^\[(.*)\](.*)/)
                         // console.log(matches)
-                     let times = matches[1].match(/^(.*):(.*)/)
-                     console.log(times)
-                     let seconds = times[1]*60 + times[2]
-                     console.log(seconds)
+                   //  let times = matches[1].match(/^(.*):(.*)/)
+                    // console.log(times)
+                   //  let seconds = times[1]*60 + times[2]
+                   //  console.log(seconds       )
                         return <p key={key} className={styles.lyric} data-time={matches[1]}>{matches[2]}</p>
                     })
                 }
